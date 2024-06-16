@@ -16,7 +16,7 @@ export class UserService {
     private router: Router,
     private http: HttpClient
   ) {
-    this.tokenSubject = new BehaviorSubject<UserToken>(JSON.parse(localStorage.getItem('user-token')||''));
+    this.tokenSubject = new BehaviorSubject<UserToken>(JSON.parse(localStorage.getItem('user-token')|| '{}'));
     this.token = this.tokenSubject.asObservable();
    }
 

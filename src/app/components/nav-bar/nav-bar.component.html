@@ -7,19 +7,19 @@
   <div class="collapse navbar-collapse" id="navbarColor03">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-              <a class="nav-link" href="home" style="text-transform: uppercase;">Página Inicial
+              <a class="nav-link" href="home" style="text-transform: uppercase;">Home Page
                   <span class="sr-only">(current)</span>
               </a>
           </li>
 
           <li class="nav-item active" *ngIf="!isLogged">
-            <a class="nav-link" href="/" style="text-transform: uppercase;">Logar
+            <a class="nav-link" href="/" style="text-transform: uppercase;">Login
                 <span class="sr-only">(current)</span>
             </a>
           </li>
          
           <li class="nav-item active" *ngIf="isLogged">
-            <a class="nav-link" href="/" style="text-transform: uppercase;" (click)="logout()">Deslogar
+            <a class="nav-link" href="/" style="text-transform: uppercase;" (click)="logout()">Logout
                 <span class="sr-only">(current)</span>
             </a>
           </li>
