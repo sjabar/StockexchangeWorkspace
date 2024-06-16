@@ -4,10 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 const routes: Routes = [
-  {path:'',component:NavBarComponent},
-  {path:'home',component:NavBarComponent},
-  { path: 'login', component: LoginComponent},
-];
+    {
+      path: '',
+      component: LoginComponent
+    }
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
