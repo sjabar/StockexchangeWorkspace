@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from './../../services/user.service';
 
 @Component({
-  selector: 'app-nav-bar',
+  selector: 'app-navbar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss'],
-  standalone: true,
+  styleUrls: ['./nav-bar.component.scss']
+
 })
 export class NavBarComponent implements OnInit {
   public isLogged: boolean;
