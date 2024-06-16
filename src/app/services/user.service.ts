@@ -25,10 +25,13 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<UserToken>(`http://localhost:3000/users/login`, {email, password})
+    let expiresInMins:Number=30;
+    return this.http.post<UserToken>(`https://dummyjson.com/auth/login`, JSON.stringify({email, password,expiresInMins}))
     .pipe(
       map(token => {
-        const userToken: UserToken = token;
+        let newtoken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJtaWNoYWVsdyIsImVtYWlsIjoibWljaGFlbC53aWxsaWFtc0B4LmR1bW15anNvbi5jb20iLCJmaXJzdE5hbWUiOiJNaWNoYWVsIiwibGFzdE5hbWUiOiJXaWxsaWFtcyIsImdlbmRlciI6Im1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL21pY2hhZWx3LzEyOCIsImlhdCI6MTcxNzYxMTc0MCwiZXhwIjoxNzE3NjE1MzQwfQ.eQnhQSnS4o0sXZWARh2HsWrEr6XfDT4ngh0ejiykfH8";
+       
+        const userToken: UserToken = token||newtoken;
 
         localStorage.setItem('user-token', JSON.stringify(userToken));
         this.tokenSubject.next(userToken);
